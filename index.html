@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>website</title>
+  <link rel="stylesheet" href=main.css>
+
+</head>
+<body>   
+            <form class="g-form" id="g-form-1" method="POST" action="" autocomplete="off">
+              <div class="preloader">
+                <div class="row">
+                  <svg class="filter" version="1.1">
+                    <defs>
+                      <filter id="gooeyness">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="gooeyness" />
+                        <feComposite in="SourceGraphic" in2="gooeyness" operator="atop" />
+                      </filter>
+                    </defs>
+                  </svg>
+                 <div class="dots">
+                  <div class="dot mainDot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                 </div>
+                </div>
+              </div>
+              <h2 style="text-align: center;" class="reg">REGISTRATION</h2>
+              <h2 class="titleRespond"></h2>
+              <h3>Google sheet</h3>
+              <div class="row">
+              <div class="col-50">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="Имя" placeholder="Лео" >
+                </div>
+                </div>
+                  <div class="row">
+                  <div class="col-50">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="Email"  required placeholder="john@mail.ru" >
+                </div>
+                </div>
+                <div class="row">
+                <div class="col-50">
+                  <label for="tel">phone number</label>
+                  <input class="text" id="tel" name="Телефон" placeholder="+7(000)000-00-00" required>
+                </div>
+                </div>
+              <div class="row">
+              <div class="col-50">
+              <button class="btn">press</button>
+              </div>
+              </div>
+            </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    
+	<script>
+		$(function() {
+			$('.text').mask('+7(000)000-00-00');
+		});
+	</script>
+
+  <script>
+  $(function() {
+  jQuery(function($) {
+    $('#name').on('keypress', function() {
+      var that = this;
+      setTimeout(function() {
+        var res = /[^а-яА-ЯїЇєЄіІёЁ ]/g.exec(that.value);
+        that.value = that.value.replace(res, '');
+      }, 0);
+    });
+  });
+})
+  </script>
+
+</body>
+</html>
