@@ -1,2 +1,2 @@
-# website-Google-Sheets
+# website-GoogleSheets
 Enters data into a google spreadsheet.
